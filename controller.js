@@ -3,3 +3,20 @@ remote.innerHTML='<p id="slide">SLIDE 1 / 7</p><button class="next" id="next">NE
 function showStatus(text,ready=false){status.textContent=text;dot.classList.toggle('ready',ready)}function send(message){if(socket?.readyState===WebSocket.OPEN)socket.send(JSON.stringify(message))}function update(){slide.textContent='SLIDE '+(current+1)+' / '+totalSlides;send({type:'go',index:current})}function roundMessage(type){return{type,topic,number:1,seconds}}
 document.querySelector('#connect').addEventListener('click',()=>{const base=server.value.trim().replace(/\/$/,'');if(!base||!room.value.trim()||!key.value){showStatus('Enter all fields');return}socket=new WebSocket(base+'?role=controller&room='+encodeURIComponent(room.value.trim())+'&key='+encodeURIComponent(key.value));showStatus('Connecting…');socket.addEventListener('open',()=>{setup.hidden=true;remote.hidden=false;showStatus('Connected',true);update()});socket.addEventListener('close',()=>showStatus('Disconnected'));socket.addEventListener('error',()=>showStatus('Could not connect'))});
 document.querySelector('#next').addEventListener('click',()=>{current=Math.min(current+1,totalSlides-1);update()});document.querySelector('#prev').addEventListener('click',()=>{current=Math.max(current-1,0);update()});document.querySelector('#reset').addEventListener('click',()=>{current=0;update()});document.querySelectorAll('[data-topic]').forEach(button=>button.addEventListener('click',()=>{topic=button.dataset.topic;document.querySelectorAll('[data-topic]').forEach(item=>item.classList.toggle('selected',item===button))}));document.querySelector('#seconds').addEventListener('change',event=>{seconds=Math.max(5,Math.min(600,Number(event.target.value)||60));event.target.value=seconds});document.querySelector('#startRound').addEventListener('click',()=>send(roundMessage('question')));document.querySelector('#answer').addEventListener('click',()=>send(roundMessage('answer')));document.querySelector('#restart').addEventListener('click',()=>send(roundMessage('restart')));document.querySelector('#moveOn').addEventListener('click',()=>send({type:'move-on'}));document.querySelector('#disconnect').addEventListener('click',()=>{socket?.close();remote.hidden=true;setup.hidden=false});
+setTimeout(()=>{
+  const topics=document.querySelector('.topics');
+  if(!topics)return;
+  const back=document.createElement('button');
+  back.type='button';
+  back.textContent='← GO BACK TO TOPICS';
+  back.style.cssText='display:none;background:#fff;color:#172133;border:2px solid #172133;margin-top:10px';
+  topics.insertAdjacentElement('afterend',back);
+  const topicButtons=[...topics.querySelectorAll('[data-topic]')];
+  const showTopics=()=>{topics.style.display='grid';back.style.display='none'};
+  const focusTopic=selected=>{
+    topicButtons.forEach(button=>{button.style.display=button===selected?'block':'none'});
+    back.style.display='block';
+  };
+  topicButtons.forEach(button=>button.addEventListener('click',()=>focusTopic(button)));
+  back.addEventListener('click',showTopics);
+},0);
