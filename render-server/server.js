@@ -16,8 +16,11 @@ wss.on("connection",(socket,request)=>{
   socket.on("message",raw=>{
     if(role!=="controller"||raw.length>200)return;
     let message;try{message=JSON.parse(raw)}catch{return}
-    if(message.type!=="go"||!Number.isInteger(message.index)||message.index<0||message.index>50)return;
-    channel.lastMessage=JSON.stringify({type:"go",index:message.index});
+    const isSlide=message.type==="go"&&Number.isInteger(message.index)&&message.index>=0&&message.index<=50;
+    const isRound=["question","answer","restart"].includes(message.type)&&["dummy-1","dummy-2","dummy-3"].includes(message.topic)&&message.number===1&&Number.isInteger(message.seconds)&&message.seconds>=5&&message.seconds<=600;
+    const isMoveOn=message.type==="move-on";
+    if(!isSlide&&!isRound&&!isMoveOn)return;
+    channel.lastMessage=JSON.stringify(message);
     for(const client of channel.clients)if(client.readyState===WebSocket.OPEN)client.send(channel.lastMessage);
   });
   socket.on("close",()=>{channel.clients.delete(socket);if(channel.clients.size===0)rooms.delete(room)});
