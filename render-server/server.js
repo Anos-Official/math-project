@@ -44,6 +44,8 @@ function keyMatches(candidate) {
 }
 
 const isInt = (value, min, max) => Number.isInteger(value) && value >= min && value <= max;
+const TOPICS = new Set(["Data_Sense", "Multiplication", "Shapes_and_Objects"]);
+const GRADES = new Set(["Grade_1-2", "Kindergarten-Grade_2"]);
 
 // Returns a sanitized command, or null if it isn't one we accept.
 function cleanCommand(data) {
@@ -54,8 +56,9 @@ function cleanCommand(data) {
     case "question":
     case "restart":
     case "answer":
-      return isInt(data.question, 1, MAX_QUESTION) && isInt(data.count, 1, 999) && isInt(data.seconds, 5, 600)
-        ? { type: data.type, question: data.question, count: data.count, seconds: data.seconds }
+    case "ready":
+      return TOPICS.has(data.topic) && GRADES.has(data.grade) && isInt(data.question, 1, 10) && isInt(data.seconds, 5, 600)
+        ? { type: data.type, topic: data.topic, grade: data.grade, question: data.question, seconds: data.seconds }
         : null;
     case "move-on":
       return { type: "move-on" };

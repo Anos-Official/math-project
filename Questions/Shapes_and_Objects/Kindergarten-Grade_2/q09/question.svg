@@ -1,0 +1,10 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 640' width='900' height='640'>
+<rect width='900' height='640' fill='#fffdf7'/><rect width='900' height='70' fill='#8e24aa'/>
+<text x='30' y='46' font-size='32' fill='#fff' text-anchor='start' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>Shapes &amp; Objects</text>
+<text x='870' y='46' font-size='24' fill='#fff' text-anchor='end' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Kindergarten - Grade 2</text>
+<circle cx='60' cy='125' r='0'/>
+<text x='60' y='122' font-size='30' fill='#8e24aa' text-anchor='start' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>Q9.</text>
+<text x='130' y='122' font-size='30' fill='#222' text-anchor='start' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Which shape has 4 equal sides?</text>
+<circle cx='190.0' cy='360' r='55.0' fill='#26a69a' stroke='#333' stroke-width='3'/><text x='190.0' y='450' font-size='32' fill='#222' text-anchor='middle' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>A</text><rect x='395.0' y='305.0' width='110' height='110' fill='#7e57c2' stroke='#333' stroke-width='3'/><text x='450.0' y='450' font-size='32' fill='#222' text-anchor='middle' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>B</text><polygon points='710.0,305.0 767.8,404.0 652.2,404.0' fill='#ef5350' stroke='#333' stroke-width='3' stroke-linejoin='round'/><text x='710.0' y='450' font-size='32' fill='#222' text-anchor='middle' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>C</text>
+<text x='60' y='598' font-size='30' fill='#444' text-anchor='start' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Answer: ____________________</text>
+<text x='880' y='630' font-size='14' fill='#aaa' text-anchor='end' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Math Game Show</text></svg>

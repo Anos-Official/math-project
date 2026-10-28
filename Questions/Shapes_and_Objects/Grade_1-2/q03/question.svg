@@ -1,0 +1,11 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 640' width='900' height='640'>
+<rect width='900' height='640' fill='#fffdf7'/><rect width='900' height='70' fill='#8e24aa'/>
+<text x='30' y='46' font-size='32' fill='#fff' text-anchor='start' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>Shapes &amp; Objects</text>
+<text x='870' y='46' font-size='24' fill='#fff' text-anchor='end' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Grade 1 - 2</text>
+<circle cx='60' cy='125' r='0'/>
+<text x='60' y='122' font-size='30' fill='#8e24aa' text-anchor='start' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>Q3.</text>
+<text x='130' y='122' font-size='30' fill='#222' text-anchor='start' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>What do THREE triangles equal? Count all the</text>
+<text x='130' y='160' font-size='30' fill='#222' text-anchor='start' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>sides.</text>
+<polygon points='200.0,305.0 257.8,404.0 142.2,404.0' fill='#ef5350' stroke='#333' stroke-width='3' stroke-linejoin='round'/><polygon points='450.0,305.0 507.8,404.0 392.2,404.0' fill='#ef5350' stroke='#333' stroke-width='3' stroke-linejoin='round'/><polygon points='700.0,305.0 757.8,404.0 642.2,404.0' fill='#ef5350' stroke='#333' stroke-width='3' stroke-linejoin='round'/>
+<text x='60' y='598' font-size='30' fill='#444' text-anchor='start' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Answer: ____________________</text>
+<text x='880' y='630' font-size='14' fill='#aaa' text-anchor='end' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Math Game Show</text></svg>

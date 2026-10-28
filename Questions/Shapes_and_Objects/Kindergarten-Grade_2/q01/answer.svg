@@ -1,0 +1,12 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 640' width='900' height='640'>
+<rect width='900' height='640' fill='#fffdf7'/><rect width='900' height='70' fill='#8e24aa'/>
+<text x='30' y='46' font-size='32' fill='#fff' text-anchor='start' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>Shapes &amp; Objects</text>
+<text x='870' y='46' font-size='24' fill='#fff' text-anchor='end' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Kindergarten - Grade 2  |  ANSWER</text>
+<circle cx='60' cy='125' r='0'/>
+<text x='60' y='122' font-size='30' fill='#8e24aa' text-anchor='start' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>Q1.</text>
+<text x='130' y='122' font-size='30' fill='#222' text-anchor='start' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>What shape is this?</text>
+<polygon points='450.0,255.0 549.8,426.0 350.2,426.0' fill='#ef5350' stroke='#333' stroke-width='3' stroke-linejoin='round'/>
+<rect x='60.0' y='535' width='230' height='70' rx='14' fill='#fff' stroke='#555' stroke-width='3'/><text x='76.0' y='583' font-size='30' fill='#888' text-anchor='start' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>A)</text><text x='189.0' y='582' font-size='28' fill='#222' text-anchor='middle' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Circle</text><rect x='335.0' y='535' width='230' height='70' rx='14' fill='#c8e6c9' stroke='#2e7d32' stroke-width='5'/><text x='351.0' y='583' font-size='30' fill='#888' text-anchor='start' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>B)</text><text x='464.0' y='582' font-size='28' fill='#222' text-anchor='middle' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Triangle</text><rect x='610.0' y='535' width='230' height='70' rx='14' fill='#fff' stroke='#555' stroke-width='3'/><text x='626.0' y='583' font-size='30' fill='#888' text-anchor='start' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>C)</text><text x='739.0' y='582' font-size='28' fill='#222' text-anchor='middle' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Square</text>
+
+<text x='450' y='520' font-size='26' fill='#1b5e20' text-anchor='middle' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>Answer: B) Triangle</text>
+<text x='880' y='630' font-size='14' fill='#aaa' text-anchor='end' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Math Game Show</text></svg>

@@ -1,0 +1,11 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 640' width='900' height='640'>
+<rect width='900' height='640' fill='#fffdf7'/><rect width='900' height='70' fill='#ef6c00'/>
+<text x='30' y='46' font-size='32' fill='#fff' text-anchor='start' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>Multiplication</text>
+<text x='870' y='46' font-size='24' fill='#fff' text-anchor='end' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Kindergarten - Grade 2</text>
+<circle cx='60' cy='125' r='0'/>
+<text x='60' y='122' font-size='30' fill='#ef6c00' text-anchor='start' font-weight='bold' font-family='Arial, Helvetica, sans-serif'>Q5.</text>
+<text x='130' y='122' font-size='30' fill='#222' text-anchor='start' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>A car has 4 wheels. How many wheels do 2 cars</text>
+<text x='130' y='160' font-size='30' fill='#222' text-anchor='start' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>have?</text>
+<rect x='195.0' y='342.5' width='150' height='52.5' rx='6' fill='#e53935' stroke='#7f0000' stroke-width='2'/><path d='M228.75 342.5 l15.0 -37.5 h52.5 l15.0 37.5Z' fill='#ef9a9a' stroke='#7f0000' stroke-width='2'/><circle cx='228.75' cy='398.75' r='16.5' fill='#222'/><circle cx='311.25' cy='398.75' r='16.5' fill='#222'/><rect x='555.0' y='342.5' width='150' height='52.5' rx='6' fill='#e53935' stroke='#7f0000' stroke-width='2'/><path d='M588.75 342.5 l15.0 -37.5 h52.5 l15.0 37.5Z' fill='#ef9a9a' stroke='#7f0000' stroke-width='2'/><circle cx='588.75' cy='398.75' r='16.5' fill='#222'/><circle cx='671.25' cy='398.75' r='16.5' fill='#222'/>
+<text x='60' y='598' font-size='30' fill='#444' text-anchor='start' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Answer: ____________________</text>
+<text x='880' y='630' font-size='14' fill='#aaa' text-anchor='end' font-weight='normal' font-family='Arial, Helvetica, sans-serif'>Math Game Show</text></svg>

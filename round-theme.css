@@ -1,0 +1,1 @@
+.round.grade-one:after,.round.grade-k:after{position:absolute;left:5vw;bottom:4vh;font-size:38px}.round.grade-one:after{content:"★";color:#ff6c5c}.round.grade-k:after{content:"●";color:#38a5c9}.round.grade-one .round-top span:last-child{color:#ff6c5c}.round.grade-k .round-top span:last-child{color:#38a5c9}
