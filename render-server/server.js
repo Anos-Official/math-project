@@ -23,11 +23,13 @@ const server = http.createServer((_, response) => {
 
 const wss = new WebSocket.Server({ server, path: "/ws", maxPayload: 1024 });
 
-// room name -> { displays, controllers, last (last valid command), lastAt (when it arrived) }
+// room name -> { displays, controllers, last (last valid command), lastAt (when it arrived), scores (team points) }
 const rooms = new Map();
 
 function getRoom(name) {
-  if (!rooms.has(name)) rooms.set(name, { displays: new Set(), controllers: new Set(), last: null, lastAt: 0 });
+  if (!rooms.has(name)) {
+    rooms.set(name, { displays: new Set(), controllers: new Set(), last: null, lastAt: 0, scores: { a: 0, b: 0 } });
+  }
   return rooms.get(name);
 }
 
@@ -67,6 +69,25 @@ function cleanCommand(data) {
   }
 }
 
+// Team points are kept here, separate from the questions, so they survive question
+// changes and page reloads. The controller only sends +1 / -1 / reset, never a total,
+// so two taps from different devices can't overwrite each other.
+const MAX_SCORE = 999;
+
+function applyScoreCommand(room, data) {
+  if (data.type === "score-reset") {
+    room.scores = { a: 0, b: 0 };
+    return true;
+  }
+  const validTeam = data.team === "a" || data.team === "b";
+  const validDelta = data.delta === 1 || data.delta === -1;
+  if (data.type !== "score" || !validTeam || !validDelta) return false;
+  room.scores[data.team] = Math.min(MAX_SCORE, Math.max(0, room.scores[data.team] + data.delta));
+  return true;
+}
+
+const scoresPayload = room => JSON.stringify({ type: "scores", a: room.scores.a, b: room.scores.b });
+
 // What a display should receive when it (re)connects. For a running timer we
 // include how long ago it started, so a refresh doesn't restart the countdown.
 function replayFor(room) {
@@ -99,6 +120,7 @@ wss.on("connection", (socket, request) => {
     room.displays.add(socket);
     const replay = replayFor(room);
     if (replay) socket.send(replay);
+    socket.send(scoresPayload(room));
   } else {
     // The key travels in the first message, not the URL, so it never appears in logs.
     authTimer = setTimeout(() => socket.close(1008, "Auth timeout"), AUTH_TIMEOUT_MS);
@@ -117,8 +139,21 @@ wss.on("connection", (socket, request) => {
         room = getRoom(roomName);
         room.controllers.add(socket);
         socket.send(JSON.stringify({ type: "authed" }));
+        socket.send(scoresPayload(room));
       } else {
         socket.close(1008, "Unauthorized");
+      }
+      return;
+    }
+
+    // Points are handled separately so they never replace the stored question state
+    // that a reconnecting display replays.
+    if (data && (data.type === "score" || data.type === "score-reset")) {
+      if (applyScoreCommand(room, data)) {
+        const scores = scoresPayload(room);
+        for (const client of [...room.displays, ...room.controllers]) {
+          if (client.readyState === WebSocket.OPEN) client.send(scores);
+        }
       }
       return;
     }
